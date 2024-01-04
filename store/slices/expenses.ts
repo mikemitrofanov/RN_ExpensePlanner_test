@@ -14,32 +14,7 @@ export interface ExpensesState {
 }
 
 const initialState: ExpensesState = {
-  expenses: [
-    {
-      id: uuid.v4().toString(),
-      description: 'qeqwe',
-      amount: 59.99,
-      date: new Date('2023-12-27')
-    },
-    {
-      id: uuid.v4().toString(),
-      description: 'asdfasdf',
-      amount: 39.99,
-      date: new Date('2023-12-20')
-    },
-    {
-      id: uuid.v4().toString(),
-      description: 'tyuityityu',
-      amount: 5.99,
-      date: new Date('2023-11-12')
-    },
-    {
-      id: uuid.v4().toString(),
-      description: 'tuydoruitoidrty',
-      amount: 15.99,
-      date: new Date('2023-10-19')
-    }
-  ],
+  expenses: [],
 };
 
 const expensesSlice = createSlice({

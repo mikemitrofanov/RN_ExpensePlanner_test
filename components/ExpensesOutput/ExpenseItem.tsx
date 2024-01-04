@@ -7,7 +7,7 @@ function ExpenseItem({ expense }) {
   const { description, date, amount, id } = expense;
   const navigation = useNavigation();
   
-  const pressHandler = () => navigation.navigate('ManageExpenses', { id });
+  const pressHandler = () => navigation.navigate('ManageExpenses', { ...expense });
   
   return (
     <Pressable
@@ -17,7 +17,7 @@ function ExpenseItem({ expense }) {
       <View style={styles.container}>
         <View>
           <Text style={[styles.textBase, styles.description]}>{description}</Text>
-          <Text style={styles.textBase}>{getFormattedDate(date)}</Text>
+          <Text style={styles.textBase}>{getFormattedDate(new Date(date))}</Text>
         </View>
         
         <View style={styles.amountContainer}>
