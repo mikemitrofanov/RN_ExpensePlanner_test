@@ -5,11 +5,12 @@ import {useSelector} from "react-redux";
 import {RootState} from "../store/store";
 import {getDateMinusDays} from "../util/date";
 import {useGetExpensesQuery} from "../store/services/expenses";
+import Loading from "../components/UI/Loading";
 
 function RecentExpensesScreen() {
   // const expenses: Array<ExpenseInterface> = useSelector((state: RootState) => state.expensesReducer.expenses);
   const { data, error, isLoading } = useGetExpensesQuery();
-  if (isLoading) return <Text>Loading</Text>
+  if (isLoading) return <Loading />
   
   const recent = data.filter((item) => {
     const today = new Date();
