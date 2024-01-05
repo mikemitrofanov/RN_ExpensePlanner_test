@@ -3,7 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import uuid from "react-native-uuid";
 
 export interface ExpenseInterface {
-  id: string,
+  _id: string,
   description: string,
   amount: number,
   date: Date
@@ -25,7 +25,7 @@ const expensesSlice = createSlice({
       state.expenses.push(action.payload)
     },
     updateExpense: (state, action: PayloadAction<ExpenseInterface>) => {
-      const index = state.expenses.findIndex((item) => item.id === action.payload.id);
+      const index = state.expenses.findIndex((item) => item._id === action.payload._id);
       state.expenses.splice(index, 1, action.payload);
     },
     deleteExpense: (state, action: PayloadAction<string>) => ({

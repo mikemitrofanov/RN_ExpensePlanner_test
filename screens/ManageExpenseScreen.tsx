@@ -41,14 +41,14 @@ function ManageExpenseScreen({ route, navigation }) {
   const confirmHandler = async (data: confirmHandlerParams) => {
     const obj = { ...data };
     if (!isEditing) await createExpense(obj);
-    else await updateExpense({ id: params?._id, ...data });
+    else await updateExpense({ _id: params?._id, ...data });
     
     // dispatch(isEditing ? updateExpense(obj) : (obj));
     closeModal();
   }
   
   const deleteHandler = async () => {
-    await deleteExpense({ id: params?._id });
+    await deleteExpense({ _id: params?._id });
     // dispatch(deleteExpense(params?.id));
     closeModal();
   }
